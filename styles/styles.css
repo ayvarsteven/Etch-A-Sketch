@@ -108,12 +108,24 @@ p, h1, h2, h3, h4, h5, h6 {
 
 #main-container {
     border: solid lightgrey 2px;
-    width: 700px;
-    height: 700px;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    gap: 0px;
+    flex-wrap: wrap;
 }
 
 h1 {
     color: red;
 }
 
+/* ================ ~ canvas-pixels ================ */
+
+.canvas-pixel {
+    background-color: white;
+    border: solid lightgrey 2px;
+    flex-basis: auto;
+    min-width: 25%;
+    min-height: 25%;
+}
 /* ================ ~ title ================ */
