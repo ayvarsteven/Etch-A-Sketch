@@ -1,44 +1,19 @@
-const pixelClone = `pixelClone`;
-const numOfVariables = 3;
+const varName = `pixelClone`;
+const numOfVariables = 16;
 
-let arrOfVars = [];
+let variableNames = [];
 
-function defineName(numOfVariablesGenerator, callFunctionXTimes) { 
+function defineName() { 
     let num = 0;
     for (i = 0; i < numOfVariables; i++) {
         num++
-        newName = pixelClone + num
-        arrOfVars += newName;
-        console.log(arrOfVars);
+        newName = varName + num
+        variableNames.push(newName) 
+        console.log(variableNames);
     }
-    return arrOfVars
+    return variableNames
 }
 
 defineName();
 
-console.log(arrOfVars);
-
-
-// ==============================================================================================================================
-
-// =============== add-to-window-object =============== 
-
-// for(i = 1; i < 5; i++) { 
-//     window['var_'+i] = + i; 
-// } 
-
-// let pixelClone = `pixelClone`
-
-// =============== use-eval() =============== 
-
-// for (i = 0; i < 16; i++) {
-//     eval('pixelClone_' + i + ' = ' +i);
-// }
-
-// console.log(pixelClone_3)
-
-// console.log(var_1); 
-// console.log(var_2);
-// console.log(var_3);
-// console.log(var_4);
-// console.log(var_5);
+console.log(variableNames);
