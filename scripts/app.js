@@ -14,6 +14,7 @@ function addColor() {
 
 // ==================== ~ define-pixel-size ====================
 
+const userInput = 16;
 // const userInput = prompt(`How many pixels would you like on the canvas?`);
 
 function definePixelSize(userInput) {
@@ -44,6 +45,20 @@ function clonePixel() {
     
 }
 
+const varName = `pixelClone`;
+
+let variableNames = [];
+
+function defineName() { 
+    let num = 0;
+    for (i = 0; i < userInput; i++) {
+        num++
+        newName = varName + num
+        variableNames.push(newName) 
+        console.log(variableNames);
+    }
+    return variableNames
+}
 
 
 // ==================== ~ title ====================
