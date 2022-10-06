@@ -60,5 +60,12 @@ function defineName() {
     return variableNames
 }
 
+console.log(defineName())
+
+// takes array of variables, clones them and appends them to the main container
+for (i = 0; i < userInput; i++) {
+    variableNames[i] = canvasPixel.cloneNode(true);
+    document.appendChild('desiredResult[i]');
+}
 
 // ==================== ~ title ====================
