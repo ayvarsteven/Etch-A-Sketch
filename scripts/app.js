@@ -1,12 +1,9 @@
 const mainContainer = document.querySelector('#main-container');
-const canvasPixel = document.querySelector('.canvas-pixel')
+const canvasPixel = document.createElement('div');
 
 // ==================== ~ set-pixel-dimension ====================
 
-canvasPixel.addEventListener('click', addColor);
-
-function addColor() {
-    canvasPixel.style = ['background-color: red'];
+function setPixelSize() {
     const pixelDimension = definePixelSize(userInput);
     canvasPixel.style.height = pixelDimension + 'px';
     canvasPixel.style.width = pixelDimension + 'px';
