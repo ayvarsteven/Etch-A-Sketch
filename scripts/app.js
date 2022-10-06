@@ -34,4 +34,16 @@ function definePixelSize(userInput) {
     return returnPixelSize();
 }
 
+// ==================== ~ clone-mian-pixel ====================
+
+const pixelClone = canvasPixel.cloneNode(true)
+mainContainer.appendChild(pixelClone);
+console.log(pixelClone)
+
+function clonePixel() {
+    
+}
+
+
+
 // ==================== ~ title ====================
