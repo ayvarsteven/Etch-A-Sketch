@@ -39,11 +39,6 @@ function definePixelSize(userInput) {
 
 const pixelClone = canvasPixel.cloneNode(true)
 mainContainer.appendChild(pixelClone);
-console.log(pixelClone)
-
-function clonePixel() {
-    
-}
 
 const varName = `pixelClone`;
 
@@ -55,17 +50,20 @@ function defineName() {
         num++
         newName = varName + num
         variableNames.push(newName) 
-        console.log(variableNames);
     }
     return variableNames
 }
 
-console.log(defineName())
+defineName();
 
 // takes array of variables, clones them and appends them to the main container
-for (i = 0; i < userInput; i++) {
-    variableNames[i] = canvasPixel.cloneNode(true);
-    document.appendChild('desiredResult[i]');
+function appendClones() {
+    for (i = 0; i < userInput -2; i++) {
+        variableNames[i] = pixelClone.cloneNode();
+        mainContainer.appendChild(variableNames[i]);
+    }
 }
+
+appendClones();
 
 // ==================== ~ title ====================
