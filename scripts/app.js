@@ -7,8 +7,6 @@ function addColor() {
     canvasPixel.style = ['background-color: red'];
 };
 
-console.log(canvasPixel);
-
 // ==================== ~ define-pixel-size ====================
 
 // const userInput = prompt(`How many pixels would you like on the canvas?`);
