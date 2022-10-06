@@ -7,7 +7,7 @@ canvasPixel.addEventListener('click', addColor);
 
 function addColor() {
     canvasPixel.style = ['background-color: red'];
-    const pixelDimension = definePixelSize();
+    const pixelDimension = definePixelSize(userInput);
     canvasPixel.style.height = pixelDimension + 'px';
     canvasPixel.style.width = pixelDimension + 'px';
 };
@@ -19,10 +19,9 @@ const userInput = 16;
 
 function definePixelSize(userInput) {
     const canvasWidth = 600;
-    const userPixelInput = 16; // this will be a prompt in the future
 
     function getRowLength() {
-        return userPixelInput/4;
+        return userInput/4;
     };
 
     function returnPixelSize() {
