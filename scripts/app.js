@@ -52,7 +52,7 @@ numberGenerator();
 // takes array of variables, clones them and appends them to the main container
 
 function appendClones() {
-    for (i = 0; i <= userInput ; i++) {
+    for (i = 1; i <= userInput ; i++) {
         listOfDivs[i] = canvasPixel.cloneNode(true)
         listOfDivs[i].id = 'pixelClone_' + [i];
         listOfDivs[i].classList.add('canvas-pixel')
