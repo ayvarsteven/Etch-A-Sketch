@@ -39,17 +39,15 @@ const generatedName = `pixelClone`;
 let listOfDivs = [];
 let divVariableNames = [];
 
-function defineName() { 
-    let num = 0;
-    for (i = 0; i < userInput; i++) {
-        num++
-        newName = generatedName + num
-        variableNames.push(newName) 
+function numberGenerator() {
+    for(i = 0; i <= userInput; i++) {
+        listOfDivs.push(i)
     }
-    return variableNames
+    listOfDivs.shift()
+    return listOfDivs
 }
 
-defineName();
+numberGenerator();
 
 // takes array of variables, clones them and appends them to the main container
 function appendClones() {
