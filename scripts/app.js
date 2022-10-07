@@ -33,11 +33,11 @@ function definePixelSize(userInput) {
 
 // ==================== ~ clone-mian-pixel ====================
 
-mainContainer.appendChild(canvasPixel);
 
 const generatedName = `pixelClone`;
 
-let variableNames = [];
+let listOfDivs = [];
+let divVariableNames = [];
 
 function defineName() { 
     let num = 0;
