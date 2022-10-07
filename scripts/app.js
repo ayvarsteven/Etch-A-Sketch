@@ -51,9 +51,12 @@ numberGenerator();
 
 // takes array of variables, clones them and appends them to the main container
 function appendClones() {
-    for (i = 0; i < userInput -1; i++) {
-        variableNames[i] = canvasPixel.cloneNode(true);
-        mainContainer.appendChild(variableNames[i]);
+    for (i = 0; i <= userInput ; i++) {
+        listOfDivs[i] = canvasPixel.cloneNode(true)
+        listOfDivs[i].id = 'pixelClone_' + [i];
+        mainContainer.appendChild(listOfDivs[i]);
+        nameDivsToVariables();
+        // listOfDivs[i].classList('.canvas-pixel')
     }
 }
 
