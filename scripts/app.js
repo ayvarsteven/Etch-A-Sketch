@@ -50,6 +50,12 @@ function numberGenerator() {
 numberGenerator();
 
 // takes array of variables, clones them and appends them to the main container
+
+function nameDivsToVariables() {
+    for (b = 0; b <= userInput; b++) {
+        divVariableNames[b] =   'pixelClone_' + listOfDivs[i];
+    }
+}
 function appendClones() {
     for (i = 0; i <= userInput ; i++) {
         listOfDivs[i] = canvasPixel.cloneNode(true)
