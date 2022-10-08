@@ -65,11 +65,11 @@ function appendClones() {
         })
 
         b.addEventListener('mouseenter', (event) => {
-            event.target.style = ['background-color: rgb(239, 239, 239)']
+            event.target.classList.toggle('hover')
 
             setTimeout(() => {
                 
-            event.target.style = ['background-color: ']
+            event.target.classList.toggle('hover')
             }, 500);
         })
     }
