@@ -61,14 +61,17 @@ function appendClones() {
         let b = document.querySelector('#pixelClone_' + i);
 
         b.addEventListener('click', () => {
-        b.style = ['background-color: red;']
+            b.style = ['background-color: red;']
         })
+
         b.addEventListener('mouseenter', (event) => {
-            b.style = ['background-color: lightgrey']
+            event.target.style = ['background-color: rgb(239, 239, 239)']
+
             setTimeout(() => {
-                event.target.style.color = '';
+                
+            event.target.style = ['background-color: ']
             }, 500);
-        }, false); 
+        })
     }
 }
 
