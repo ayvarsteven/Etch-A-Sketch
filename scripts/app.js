@@ -77,4 +77,12 @@ function appendClones() {
 
 appendClones();
 
+// ==================== ~ grid-size ====================
+
+const gridSize = document.querySelector('#grid-size')
+
+gridSize.addEventListener('click', (event) => {
+    let grid = prompt(`Grid Sizing?`)
+})
+
 // ==================== ~ title ====================
