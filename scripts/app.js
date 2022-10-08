@@ -57,10 +57,18 @@ function appendClones() {
         listOfDivs[i].id = 'pixelClone_' + [i];
         listOfDivs[i].classList.add('canvas-pixel')
         mainContainer.appendChild(listOfDivs[i]);
+
         let b = document.querySelector('#pixelClone_' + i);
+
         b.addEventListener('click', () => {
         b.style = ['background-color: red;']
         })
+        b.addEventListener('mouseenter', (event) => {
+            b.style = ['background-color: lightgrey']
+            setTimeout(() => {
+                event.target.style.color = '';
+            }, 500);
+        }, false); 
     }
 }
 
