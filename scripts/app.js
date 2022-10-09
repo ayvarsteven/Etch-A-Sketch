@@ -1,6 +1,9 @@
 const mainContainer = document.querySelector('#main-container');
 const canvasPixel = document.createElement('div');
-const defaultCanvasSize = 16;
+const canvasSize = 16;
+let pixelDimension 
+definePixelSize();
+
 
 // ==================== ~ clone-mian-pixel ====================
 
@@ -8,10 +11,9 @@ const defaultCanvasSize = 16;
 const generatedName = `pixelClone`;
 
 let listOfDivs = [];
-let divVariableNames = [];
 
 function numberGenerator() {
-    for(i = 0; i <= defaultCanvasSize; i++) {
+    for(i = 0; i <= canvasSize; i++) {
         listOfDivs.push(i)
     }
     listOfDivs.shift()
