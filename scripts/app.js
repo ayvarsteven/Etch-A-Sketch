@@ -1,29 +1,27 @@
 const mainContainer = document.querySelector('#main-container');
 const canvasPixel = document.createElement('div');
 const gridSizeBtn = document.querySelector('#grid-size')
+
+const generatedName = `pixelClone`;
 let squaresPerSide = 4;
 let pixelDimension 
+let listOfDivs = [];
+
 definePixelSize();
 
 // ==================== ~ clone-mian-pixel ====================
 
-const generatedName = `pixelClone`;
-
-let listOfDivs = [];
-
-function numberGenerator(squaresPerSide) {
+function createNumberOfDivs(squaresPerSide) {
     squaresPerSide = squaresPerSide * squaresPerSide
-    console.log(squaresPerSide)
     for(i = 0; i <= squaresPerSide; i++) {
         listOfDivs.push(i)
     }
     listOfDivs.shift()
     return listOfDivs
 }
-numberGenerator();
+createNumberOfDivs();
 
-// takes array of variables, clones them and appends them to the main container
-function appendClones() {
+function generateGrid() {
     squaresPerSide = squaresPerSide * squaresPerSide
     console.log(squaresPerSide)
     for (i = 1; i <= squaresPerSide; i++) {
@@ -51,7 +49,7 @@ function appendClones() {
         })
     }
 }
-appendClones();
+generateGrid();
 
 // ==================== ~ define-pixel-size ====================
 
@@ -72,8 +70,8 @@ gridSizeBtn.addEventListener('click', (event) => {
     pixelDimension = definePixelSize(squaresPerSide);
     mainContainer.replaceChildren()
     listOfDivs = [];
-    numberGenerator(squaresPerSide)
-    appendClones();
+    createNumberOfDivs(squaresPerSide)
+    generateGrid();
     return squaresPerSide
 })
 
