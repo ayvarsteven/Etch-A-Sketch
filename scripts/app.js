@@ -61,7 +61,7 @@ function appendClones() {
         let b = document.querySelector('#pixelClone_' + i);
 
         b.addEventListener('click', () => {
-            b.style = ['background-color: red;']
+            b.style = ['background-color: orangered;']
         })
 
         b.addEventListener('mouseenter', (event) => {
@@ -82,7 +82,12 @@ appendClones();
 const gridSize = document.querySelector('#grid-size')
 
 gridSize.addEventListener('click', (event) => {
-    let grid = prompt(`Grid Sizing?`)
+    // let grid = prompt(`Grid Sizing?`)
+    let grid = userInput
+
+    mainContainer.replaceChildren()
 })
 
 // ==================== ~ title ====================
+
+console.log(`hello world`)
