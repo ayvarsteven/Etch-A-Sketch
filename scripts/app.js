@@ -59,16 +59,6 @@ function definePixelSize(gridSize = 16) {
     return pixelDimension = gridSize
 }
 
-    function returnPixelSize() {
-        const rowLength = getRowLength();
-        let pixelSize
-        pixelSize = canvasWidth/rowLength
-        return pixelSize
-    };
-
-    return returnPixelSize();
-}
-
 // ==================== ~ grid-size ====================
 
 const gridSize = document.querySelector('#grid-size')
