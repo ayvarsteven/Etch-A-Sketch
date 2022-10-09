@@ -23,12 +23,13 @@ function numberGenerator() {
 numberGenerator();
 
 // takes array of variables, clones them and appends them to the main container
-
 function appendClones() {
-    for (i = 1; i <= defaultCanvasSize ; i++) {
+    for (i = 1; i <= canvasSize ; i++) {
         listOfDivs[i] = canvasPixel.cloneNode(true)
         listOfDivs[i].id = 'pixelClone_' + [i];
         listOfDivs[i].classList.add('canvas-pixel')
+        listOfDivs[i].style.width = [pixelDimension + 'px'];
+        listOfDivs[i].style.height = [pixelDimension + 'px'];
         mainContainer.appendChild(listOfDivs[i]);
 
         let b = document.querySelector('#pixelClone_' + i);
