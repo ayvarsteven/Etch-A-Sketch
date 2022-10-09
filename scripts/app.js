@@ -33,17 +33,19 @@ function appendClones() {
         mainContainer.appendChild(listOfDivs[i]);
 
         let b = document.querySelector('#pixelClone_' + i);
+        console.log(b);
 
         b.addEventListener('click', () => {
-            b.style = ['background-color: orangered;']
+            b.style.background = 'orangered';
         })
 
-        b.addEventListener('mouseenter', (event) => {
-            event.target.classList.toggle('hover')
+        b.addEventListener('mouseover', (event) => {
+            event.target.classList.toggle('hover');
+        })
 
+        b.addEventListener('mouseleave', (event) => {
             setTimeout(() => {
-                
-            event.target.classList.toggle('hover')
+                event.target.classList.toggle('hover')
             }, 500);
         })
     }
