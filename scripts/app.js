@@ -1,9 +1,8 @@
 const mainContainer = document.querySelector('#main-container');
 const canvasPixel = document.createElement('div');
-const canvasSize = 16;
+let gridSize = 16;
 let pixelDimension 
 definePixelSize();
-
 
 // ==================== ~ clone-mian-pixel ====================
 
@@ -12,19 +11,18 @@ const generatedName = `pixelClone`;
 
 let listOfDivs = [];
 
-function numberGenerator() {
-    for(i = 0; i <= canvasSize; i++) {
+function numberGenerator(gridSize) {
+    for(i = 0; i <= gridSize; i++) {
         listOfDivs.push(i)
     }
     listOfDivs.shift()
     return listOfDivs
 }
-
 numberGenerator();
 
 // takes array of variables, clones them and appends them to the main container
 function appendClones() {
-    for (i = 1; i <= canvasSize ; i++) {
+    for (i = 1; i <= gridSize ; i++) {
         listOfDivs[i] = canvasPixel.cloneNode(true)
         listOfDivs[i].id = 'pixelClone_' + [i];
         listOfDivs[i].classList.add('canvas-pixel')
@@ -33,7 +31,6 @@ function appendClones() {
         mainContainer.appendChild(listOfDivs[i]);
 
         let b = document.querySelector('#pixelClone_' + i);
-        console.log(b);
 
         b.addEventListener('click', () => {
             b.style.background = 'orangered';
@@ -50,7 +47,6 @@ function appendClones() {
         })
     }
 }
-
 appendClones();
 
 // ==================== ~ define-pixel-size ====================
@@ -63,15 +59,16 @@ function definePixelSize(gridSize = 16) {
 
 // ==================== ~ grid-size ====================
 
-const gridSize = document.querySelector('#grid-size')
-
-gridSize.addEventListener('click', (event) => {
-    let canvasSize = prompt(`Grid Sizing?`)
+const gridSizeBtn = document.querySelector('#grid-size')
+gridSizeBtn.addEventListener('click', (event) => {
+    gridSize = prompt(`Grid Sizing?`)
     gridSize = Number(gridSize)
-    canvasSize = gridSize
-    let pixelSize = definePixelSize(gridSize);
-    // mainContainer.replaceChildren()
-    return canvasSize
+    pixelDimension = definePixelSize(gridSize);
+    mainContainer.replaceChildren()
+    listOfDivs = [];
+    numberGenerator(gridSize)
+    appendClones();
+    return gridSize
 })
 
 // // ==================== ~ title ====================
