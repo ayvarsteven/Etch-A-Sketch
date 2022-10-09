@@ -1,17 +1,18 @@
 const mainContainer = document.querySelector('#main-container');
 const canvasPixel = document.createElement('div');
-let squaresPerSide = 16;
+let squaresPerSide = 4;
 let pixelDimension 
 definePixelSize();
 
 // ==================== ~ clone-mian-pixel ====================
-
 
 const generatedName = `pixelClone`;
 
 let listOfDivs = [];
 
 function numberGenerator(squaresPerSide) {
+    squaresPerSide = squaresPerSide * squaresPerSide
+    console.log(squaresPerSide)
     for(i = 0; i <= squaresPerSide; i++) {
         listOfDivs.push(i)
     }
@@ -22,7 +23,9 @@ numberGenerator();
 
 // takes array of variables, clones them and appends them to the main container
 function appendClones() {
-    for (i = 1; i <= squaresPerSide ; i++) {
+    squaresPerSide = squaresPerSide * squaresPerSide
+    console.log(squaresPerSide)
+    for (i = 1; i <= squaresPerSide; i++) {
         listOfDivs[i] = canvasPixel.cloneNode(true)
         listOfDivs[i].id = 'pixelClone_' + [i];
         listOfDivs[i].classList.add('canvas-pixel')
@@ -51,9 +54,9 @@ appendClones();
 
 // ==================== ~ define-pixel-size ====================
 
-function definePixelSize(squaresPerSide = 16) {
-    const canvasArea = 2400;
-    squaresPerSide = canvasArea/squaresPerSide
+function definePixelSize(squaresPerSide = 4) {
+    const canvasWidth = 600;
+    squaresPerSide = canvasWidth/squaresPerSide
     return pixelDimension = squaresPerSide
 }
 
