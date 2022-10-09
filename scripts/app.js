@@ -51,14 +51,6 @@ function appendClones() {
 
 appendClones();
 
-// ==================== ~ set-pixel-dimension ====================
-
-function setPixelSize() {
-    const pixelDimension = definePixelSize();
-    canvasPixel.style.height = pixelDimension + 'px';
-    canvasPixel.style.width = pixelDimension + 'px';
-};
-
 // ==================== ~ define-pixel-size ====================
 
 // const defaultCanvasSize = prompt(`How many pixels would you like on the canvas?`);
