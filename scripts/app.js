@@ -12,8 +12,7 @@ definePixelSize();
 // ==================== ~ clone-mian-pixel ====================
 
 function createNumberOfDivs(squaresPerSide) {
-    squaresPerSide = squaresPerSide * squaresPerSide
-    for(i = 0; i <= squaresPerSide; i++) {
+    for(i = 0; i <= squaresPerSide * squaresPerSide; i++) {
         listOfDivs.push(i)
     }
     listOfDivs.shift()
@@ -21,10 +20,18 @@ function createNumberOfDivs(squaresPerSide) {
 }
 createNumberOfDivs();
 
+function paint() {
+    listOfDivs[i].addEventListener('mousedown', (event) => {
+        event.target.style.background = 'orangered';
+    })
+}
+
+function hover() {
+
+}
+
 function generateGrid() {
-    squaresPerSide = squaresPerSide * squaresPerSide
-    console.log(squaresPerSide)
-    for (i = 1; i <= squaresPerSide; i++) {
+    for (i = 1; i <= squaresPerSide * squaresPerSide; i++) {
         listOfDivs[i] = canvasPixel.cloneNode(true)
         listOfDivs[i].id = 'pixelClone_' + [i];
         listOfDivs[i].classList.add('canvas-pixel')
@@ -76,7 +83,3 @@ gridSizeBtn.addEventListener('click', (event) => {
 })
 
 // // ==================== ~ title ====================
-
-window.onload = () => {
-    squaresPerSide = 4;
-}
