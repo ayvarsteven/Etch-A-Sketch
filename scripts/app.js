@@ -53,14 +53,11 @@ appendClones();
 
 // ==================== ~ define-pixel-size ====================
 
-// const defaultCanvasSize = prompt(`How many pixels would you like on the canvas?`);
-
-function definePixelSize(grid) {
-    const canvasWidth = 600;
-
-    function getRowLength() {
-        return grid/4;
-    };
+function definePixelSize(gridSize = 16) {
+    const canvasArea = 2400;
+    gridSize = canvasArea/gridSize
+    return pixelDimension = gridSize
+}
 
     function returnPixelSize() {
         const rowLength = getRowLength();
