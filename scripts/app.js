@@ -65,6 +65,9 @@ function definePixelSize(squaresPerSide = 4) {
 const gridSizeBtn = document.querySelector('#grid-size')
 gridSizeBtn.addEventListener('click', (event) => {
     squaresPerSide = prompt(`Grid Sizing?`)
+    if (!squaresPerSide < 100) {
+        return alert(`number cannot exceed 100`)
+    }
     squaresPerSide = Number(squaresPerSide)
     pixelDimension = definePixelSize(squaresPerSide);
     mainContainer.replaceChildren()
