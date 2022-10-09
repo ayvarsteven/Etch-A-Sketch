@@ -64,12 +64,12 @@ function definePixelSize(gridSize = 16) {
 const gridSize = document.querySelector('#grid-size')
 
 gridSize.addEventListener('click', (event) => {
-    let grid = prompt(`Grid Sizing?`)
-    definePixelSize(grid);
-    setPixelSize(grid);
-    mainContainer.replaceChildren()
-    
-    
+    let canvasSize = prompt(`Grid Sizing?`)
+    gridSize = Number(gridSize)
+    canvasSize = gridSize
+    let pixelSize = definePixelSize(gridSize);
+    // mainContainer.replaceChildren()
+    return canvasSize
 })
 
-// ==================== ~ title ====================
+// // ==================== ~ title ====================
