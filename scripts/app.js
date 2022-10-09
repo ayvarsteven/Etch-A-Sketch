@@ -1,5 +1,6 @@
 const mainContainer = document.querySelector('#main-container');
 const canvasPixel = document.createElement('div');
+const gridSizeBtn = document.querySelector('#grid-size')
 let squaresPerSide = 4;
 let pixelDimension 
 definePixelSize();
@@ -35,7 +36,7 @@ function appendClones() {
 
         let b = document.querySelector('#pixelClone_' + i);
 
-        b.addEventListener('click', () => {
+        b.addEventListener('mousedown', () => {
             b.style.background = 'orangered';
         })
 
@@ -46,7 +47,7 @@ function appendClones() {
         b.addEventListener('mouseleave', (event) => {
             setTimeout(() => {
                 event.target.classList.toggle('hover')
-            }, 500);
+            }, 100);
         })
     }
 }
@@ -62,7 +63,6 @@ function definePixelSize(squaresPerSide = 4) {
 
 // ==================== ~ grid-size ====================
 
-const gridSizeBtn = document.querySelector('#grid-size')
 gridSizeBtn.addEventListener('click', (event) => {
     squaresPerSide = prompt(`Grid Sizing?`)
     if (squaresPerSide > 100) {
@@ -78,3 +78,7 @@ gridSizeBtn.addEventListener('click', (event) => {
 })
 
 // // ==================== ~ title ====================
+
+window.onload = () => {
+    squaresPerSide = 4;
+}
